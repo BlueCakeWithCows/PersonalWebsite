@@ -9,7 +9,7 @@ export class Navigation extends React.Component {
             <Navbar className='navigation-bar'>
                 <Container>
                     <NavbarBrand href='./home'>
-                        <Image src="brand.png" className='logo'/>
+                        <Image src="/brand.png" className='logo'/>
                     </NavbarBrand>
                     <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                     <Navbar.Collapse id='responsive-navbar-nav'>
