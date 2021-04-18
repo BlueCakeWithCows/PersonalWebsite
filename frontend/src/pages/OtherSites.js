@@ -5,7 +5,7 @@ import {Navigation} from "../components/Navigation";
 export class OtherSites extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {websites: [{full_name: 'loading', nickname: 'loading', url: '#'}]}
+        this.state = {websites: [{full_name: '', nickname: '', url: '#'}]}
     }
 
     render() {
@@ -30,13 +30,12 @@ export class OtherSites extends React.Component {
     componentDidMount() {
         this.getFavoriteWebsites().then((array) => {
             this.setState({websites: array});
-        });
+        }).catch();
     }
 
     async getFavoriteWebsites() {
         return fetch('/websites_list/api/websites/')
             .then((res) => res.json())
-            .then(data => (data))
-            .catch((err) => 'D:');
+            .then(data => (data));
     }
 }
