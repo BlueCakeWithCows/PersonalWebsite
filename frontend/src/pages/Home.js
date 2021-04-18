@@ -41,7 +41,7 @@ export class Home extends React.Component {
 
                         <Jumbotron className={'biography'}>
                             <Container className={'clearfix'} align='left'>
-                                <Image src={'photograph.jpg'} style={{width: '60%'}} fluid={true}
+                                <Image src={'/photograph.jpg'} style={{width: '60%'}} fluid={true}
                                        className={'float-left mr-3'}/>
                                 <h2>Mason Kohls</h2>
                                 <p>
