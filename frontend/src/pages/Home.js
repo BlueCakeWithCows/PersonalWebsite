@@ -9,14 +9,16 @@ function randomInteger(min, max) {
 export class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {riddle: 'Why did the chicken cross the road?'};
+        this.state = {riddle: ' '};
     }
 
 
     componentDidMount() {
         this.getJokes().then((array) => {
             this.setState({riddle: array[randomInteger(0, array.length)]['joke']});
-        }).catch();
+        }).catch(() => {
+            this.setState({riddle: 'Why did the chicken cross the road?'});
+        });
     }
 
     async getJokes() {
