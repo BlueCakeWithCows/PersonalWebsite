@@ -10,7 +10,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@6ebc88dc2e550247a73cd8cbf189bbc7fd61c3b4
         with:
           role-to-assume: arn:aws:iam::744850358177:role/GitHubActionsPersonalWebsite
-          region: us-west-2
+          aws-region: us-west-2
 
       - name: Sync files to S3
         run: |
