@@ -16,4 +16,4 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./build/bluecakewithcows-personal-website s3://bluecakewithcows-personal-website --exclude ".git/*" --delete
+          aws s3 sync ./artifacts/bluecakewithcows-personal-website s3://bluecakewithcows-personal-website --exclude ".git/*" --delete
