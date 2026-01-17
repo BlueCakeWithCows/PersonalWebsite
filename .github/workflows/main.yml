@@ -7,6 +7,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
       - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@6ebc88dc2e550247a73cd8cbf189bbc7fd61c3b4
+        with:
+          role-to-assume: arn:aws:iam::744850358177:role/GitHubActionsPersonalWebsite
+          region: us-west-2
+
+      - name: Sync files to S3
         run: |
-          ls
-          echo $(cat echo.txt)
+          aws s3 sync ./build/bluecakewithcows-personal-website s3://bluecakewithcows-personal-website --exclude ".git/*" --delete
